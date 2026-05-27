@@ -1,7 +1,6 @@
 # Docker Mastery Assignment
-## ElevateHub DevOps Track | Student: Edem Adzimah
+## ElevateHub Cloud Computing Track | Student: Edem Adzimah
 
-## What This Project Is About
 ## What This Project Is About
 I containerized a Python Flask web application as part of the Docker Mastery 
 Assignment. The project covers the complete Docker workflow from building a 
