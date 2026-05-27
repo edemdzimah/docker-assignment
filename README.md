@@ -2,12 +2,12 @@
 ## ElevateHub DevOps Track | Student: Edem Adzimah
 
 ## What This Project Is About
-I containerized a Python Flask web application as part of the ElevateHub 
-DevOps Track assignment. The project covers the complete Docker workflow 
-from building a Docker image on my local machine, pushing it to three 
-different container registries, and finally running a full three service 
-application using Docker Compose where Flask, Redis and PostgreSQL all 
-work together.
+## What This Project Is About
+I containerized a Python Flask web application as part of the Docker Mastery 
+Assignment. The project covers the complete Docker workflow from building a 
+Docker image on my local machine, pushing it to three different container 
+registries, and finally running a full three service application using Docker 
+Compose where Flask, Redis and PostgreSQL all work together.
 
 ## My Registry URLs
 
