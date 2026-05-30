@@ -58,3 +58,26 @@ production ready images, push them to multiple registries including DockerHub,
 GitHub and AWS ECR, and wire up multi service applications using Docker Compose. 
 The most exciting moment was watching three separate services start up and 
 communicate with each other from a single command.
+
+## Bonus D: .dockerignore
+
+I created a .dockerignore file to exclude unnecessary files from 
+the Docker build context. The following patterns are excluded:
+
+.git and .gitignore — Git version history is not needed inside 
+the container and adds unnecessary size.
+
+screenshots/ — Screenshot files are for human documentation only 
+and have no role inside a running container.
+
+README.md — The container does not need to read its own documentation 
+to function.
+
+__pycache__ and .pyc files — Python generates fresh compiled files 
+during the build so including old ones causes conflicts.
+
+.env — Excluding environment files prevents accidentally baking 
+secrets and passwords into the image.
+
+.vscode/ — Editor configuration files are completely irrelevant 
+inside a production container.
