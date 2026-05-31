@@ -59,6 +59,7 @@ GitHub and AWS ECR, and wire up multi service applications using Docker Compose.
 The most exciting moment was watching three separate services start up and 
 communicate with each other from a single command.
 
+
 ## Bonus D: .dockerignore
 
 I created a .dockerignore file to exclude unnecessary files from 
@@ -81,3 +82,28 @@ secrets and passwords into the image.
 
 .vscode/ — Editor configuration files are completely irrelevant 
 inside a production container.
+
+
+## Bonus B: Multi-stage Build
+
+I rewrote the Dockerfile to use a multi-stage build to minimize 
+the final image size.
+
+Stage 1 (Builder) installs all the Python packages into a specific 
+folder called /app/packages using pip with the --target flag.
+
+Stage 2 (Runner) starts from a completely fresh clean Python image 
+and copies only the installed packages from Stage 1 leaving all the 
+build tools and cache behind.
+
+### Image Size Comparison
+
+| Image | Size | Description |
+|-------|------|-------------|
+| flask-app:v1.0 | 240MB | Original single stage build |
+| flask-app:v2.0-multistage | 231MB | Multi-stage build |
+
+Result: 9MB reduction in image size. In larger production applications 
+with many more dependencies this technique can reduce image sizes by 
+hundreds of megabytes, improving download speeds and reducing cloud 
+storage costs.
